@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"get_discriminant": {
+			"proto_instances": {
+			}
+		}
+	}
+}

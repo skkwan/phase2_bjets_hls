@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1536262675000">
+  <ports id="1" name="jet_tk13DIP_V" type="PortType" bitwidth="5"/>
+  <ports id="2" name="jet_muPt_V" type="PortType" bitwidth="8"/>
+  <ports id="3" name="jet_d_V" type="PortType" bitwidth="4"/>
+  <blocks id="9" name="get_discriminant" type="BlockType">
+    <node_objs xsi:type="cdfg:CdfgNode" id="8" name="node_8" lineNumber="10" fileName="phase2_bjets_hls/discr_array_exercise.cc" fileDirectory=".." contextFuncName="get_discriminant" opcode="ret" m_display="0">
+      <inlineStackInfo fileName="phase2_bjets_hls/discr_array_exercise.cc" linenumber="10" fileDirectory="/home/skwan/vivado" functionName="get_discriminant"/>
+    </node_objs>
+    <fileValidLineNumbers fileName="phase2_bjets_hls/discr_array_exercise.cc">
+      <validLinenumbers>10</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <ScheduleInfo time="0"/>
+  <ioPorts name="jet_d_V"/>
+  <ioPorts name="jet_muPt_V"/>
+  <ioPorts name="jet_tk13DIP_V"/>
+  <fsm>
+    <states id="1">
+      <operations id="4" stage="1" latency="1"/>
+      <operations id="5" stage="1" latency="1"/>
+      <operations id="6" stage="1" latency="1"/>
+      <operations id="7" stage="1" latency="1"/>
+      <operations id="8" stage="1" latency="1"/>
+    </states>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="get_discriminant" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>9</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>
