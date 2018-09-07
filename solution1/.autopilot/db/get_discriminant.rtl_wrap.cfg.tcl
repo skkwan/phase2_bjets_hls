@@ -9,8 +9,8 @@ set BitWidth0 "24"
 set ArrayOpt0 ""
 set Const0 "0"
 set Volatile0 "0"
-set Pointer0 "0"
-set Reference0 "0"
+set Pointer0 "2"
+set Reference0 "1"
 set Dims0 [list 0]
 set Interface0 "wire"
 set structMem0 ""
@@ -47,7 +47,7 @@ set Pointer02 "0"
 set Reference02 "0"
 set Dims02 [list 0]
 set Interface02 "wire"
-set DataType02 "[list ap_uint 4 ]"
+set DataType02 "[list ap_uint 1 ]"
 set Port02 [list $PortName02 $Interface02 $DataType02 $Pointer02 $Dims02 $Const02 $Volatile02 $ArrayOpt02]
 lappend structMem0 $Port02
 set structParameter0 [list ]

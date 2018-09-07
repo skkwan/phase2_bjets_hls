@@ -6,11 +6,11 @@
 
 <UserAssignments>
 <unit>ns</unit>
-<ProductFamily>aartix7</ProductFamily>
-<Part>xa7a12tcsg325-1q</Part>
+<ProductFamily>virtexuplus</ProductFamily>
+<Part>xcvu9p-flgc2104-2-i</Part>
 <TopModelName>get_discriminant</TopModelName>
-<TargetClockPeriod>10.00</TargetClockPeriod>
-<ClockUncertainty>1.25</ClockUncertainty>
+<TargetClockPeriod>3.12</TargetClockPeriod>
+<ClockUncertainty>0.39</ClockUncertainty>
 </UserAssignments>
 
 <PerformanceEstimates>
@@ -35,12 +35,14 @@
 <DSP48E>0</DSP48E>
 <FF>0</FF>
 <LUT>0</LUT>
+<URAM>0</URAM>
 </Resources>
 <AvailableResources>
-<BRAM_18K>40</BRAM_18K>
-<DSP48E>40</DSP48E>
-<FF>16000</FF>
-<LUT>8000</LUT>
+<BRAM_18K>4320</BRAM_18K>
+<DSP48E>6840</DSP48E>
+<FF>2364480</FF>
+<LUT>1182240</LUT>
+<URAM>960</URAM>
 </AvailableResources>
 </AreaEstimates>
 
@@ -92,7 +94,7 @@
 <RtlPorts>
 <name>jet_tk13DIP_V</name>
 <Object>jet_tk13DIP_V</Object>
-<Type>scalar</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
@@ -104,7 +106,7 @@
 <RtlPorts>
 <name>jet_muPt_V</name>
 <Object>jet_muPt_V</Object>
-<Type>scalar</Type>
+<Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
@@ -116,13 +118,25 @@
 <RtlPorts>
 <name>jet_d_V</name>
 <Object>jet_d_V</Object>
-<Type>scalar</Type>
+<Type>pointer</Type>
 <Scope></Scope>
-<IOProtocol>ap_none</IOProtocol>
+<IOProtocol>ap_vld</IOProtocol>
 <IOConfig></IOConfig>
-<Dir>in</Dir>
-<Bits>4</Bits>
+<Dir>out</Dir>
+<Bits>1</Bits>
 <Attribute>data</Attribute>
+<CType>int</CType>
+</RtlPorts>
+<RtlPorts>
+<name>jet_d_V_ap_vld</name>
+<Object>jet_d_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_vld</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
 <CType>int</CType>
 </RtlPorts>
 </InterfaceSummary>

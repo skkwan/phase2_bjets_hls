@@ -3,13 +3,13 @@
 ================================================================
 == Vivado HLS Report for 'get_discriminant'
 ================================================================
-* Date:           Thu Sep  6 15:37:55 2018
+* Date:           Thu Sep  6 17:19:47 2018
 
 * Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
 * Project:        phase2_bjets_hls
 * Solution:       solution1
-* Product family: aartix7
-* Target device:  xa7a12tcsg325-1q
+* Product family: virtexuplus
+* Target device:  xcvu9p-flgc2104-2-i
 
 
 ================================================================
@@ -20,7 +20,7 @@
     +--------+-------+----------+------------+
     |  Clock | Target| Estimated| Uncertainty|
     +--------+-------+----------+------------+
-    |ap_clk  |  10.00|     0.000|        1.25|
+    |ap_clk  |   3.12|     0.000|        0.39|
     +--------+-------+----------+------------+
 
 + Latency (clock cycles): 
@@ -75,17 +75,18 @@ IsGatedGlobalClock: 0
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 0.00>
-ST_1 : Operation 2 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i5 %jet_tk13DIP_V), !map !26"   --->   Operation 2 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 3 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i8 %jet_muPt_V), !map !32"   --->   Operation 3 'specbitsmap' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 4 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i4 %jet_d_V), !map !36"   --->   Operation 4 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 2 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i5* %jet_tk13DIP_V), !map !26"   --->   Operation 2 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i8* %jet_muPt_V), !map !30"   --->   Operation 3 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %jet_d_V), !map !34"   --->   Operation 4 'specbitsmap' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 5 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([17 x i8]* @get_discriminant_str) nounwind"   --->   Operation 5 'spectopmodule' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 6 [1/1] (0.00ns)   --->   "ret void" [phase2_bjets_hls/discr_array_exercise.cc:10]   --->   Operation 6 'ret' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i1P(i1* %jet_d_V, i1 true)" [phase2_bjets_hls/discr_array_exercise.cc:9]   --->   Operation 6 'write' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "ret void" [phase2_bjets_hls/discr_array_exercise.cc:12]   --->   Operation 7 'ret' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
 + Verbose Summary: Timing violations
 ============================================================
-Target clock period: 10ns, clock uncertainty: 1.25ns.
+Target clock period: 3.12ns, clock uncertainty: 0.391ns.
 
  <State 1>: 0ns
 The critical path consists of the following:

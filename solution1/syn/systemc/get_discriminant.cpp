@@ -13,7 +13,9 @@ using namespace std;
 namespace ap_rtl {
 
 const sc_logic get_discriminant::ap_const_logic_1 = sc_dt::Log_1;
+const sc_lv<1> get_discriminant::ap_const_lv1_1 = "1";
 const sc_logic get_discriminant::ap_const_logic_0 = sc_dt::Log_0;
+const bool get_discriminant::ap_const_boolean_1 = true;
 
 get_discriminant::get_discriminant(sc_module_name name) : sc_module(name), mVcdFile(0) {
 
@@ -23,6 +25,12 @@ get_discriminant::get_discriminant(sc_module_name name) : sc_module(name), mVcdF
     SC_METHOD(thread_ap_idle);
 
     SC_METHOD(thread_ap_ready);
+    sensitive << ( ap_start );
+
+    SC_METHOD(thread_jet_d_V);
+    sensitive << ( ap_start );
+
+    SC_METHOD(thread_jet_d_V_ap_vld);
     sensitive << ( ap_start );
 
     SC_THREAD(thread_hdltv_gen);
@@ -43,6 +51,7 @@ get_discriminant::get_discriminant(sc_module_name name) : sc_module(name), mVcdF
     sc_trace(mVcdFile, jet_tk13DIP_V, "(port)jet_tk13DIP_V");
     sc_trace(mVcdFile, jet_muPt_V, "(port)jet_muPt_V");
     sc_trace(mVcdFile, jet_d_V, "(port)jet_d_V");
+    sc_trace(mVcdFile, jet_d_V_ap_vld, "(port)jet_d_V_ap_vld");
 #endif
 
     }
@@ -72,6 +81,18 @@ void get_discriminant::thread_ap_ready() {
     ap_ready = ap_start.read();
 }
 
+void get_discriminant::thread_jet_d_V() {
+    jet_d_V = ap_const_lv1_1;
+}
+
+void get_discriminant::thread_jet_d_V_ap_vld() {
+    if (esl_seteq<1,1,1>(ap_start.read(), ap_const_logic_1)) {
+        jet_d_V_ap_vld = ap_const_logic_1;
+    } else {
+        jet_d_V_ap_vld = ap_const_logic_0;
+    }
+}
+
 void get_discriminant::thread_hdltv_gen() {
     const char* dump_tv = std::getenv("AP_WRITE_TV");
     if (!(dump_tv && string(dump_tv) == "on")) return;
@@ -90,7 +111,8 @@ void get_discriminant::thread_hdltv_gen() {
         mHdltvoutHandle << " , " <<  " \"ap_ready\" :  \"" << ap_ready.read() << "\" ";
         mHdltvinHandle << " , " <<  " \"jet_tk13DIP_V\" :  \"" << jet_tk13DIP_V.read() << "\" ";
         mHdltvinHandle << " , " <<  " \"jet_muPt_V\" :  \"" << jet_muPt_V.read() << "\" ";
-        mHdltvinHandle << " , " <<  " \"jet_d_V\" :  \"" << jet_d_V.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"jet_d_V\" :  \"" << jet_d_V.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"jet_d_V_ap_vld\" :  \"" << jet_d_V_ap_vld.read() << "\" ";
         mHdltvinHandle << "}" << std::endl;
         mHdltvoutHandle << "}" << std::endl;
         ap_cycleNo++;

@@ -1,13 +1,13 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'get_discriminant'" level="0">
-<item name = "Date">Thu Sep  6 15:37:55 2018
+<item name = "Date">Thu Sep  6 17:19:47 2018
 </item>
 <item name = "Version">2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)</item>
 <item name = "Project">phase2_bjets_hls</item>
 <item name = "Solution">solution1</item>
-<item name = "Product family">aartix7</item>
-<item name = "Target device">xa7a12tcsg325-1q</item>
+<item name = "Product family">virtexuplus</item>
+<item name = "Target device">xcvu9p-flgc2104-2-i</item>
 </section>
 
 <section name = "Performance Estimates" level="0">
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00, 0.000, 1.25</column>
+<column name="ap_clk">3.12, 0.000, 0.39</column>
 </table>
 </item>
 </section>

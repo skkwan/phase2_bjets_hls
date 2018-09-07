@@ -10,6 +10,21 @@ if {${::AESL::PGuard_autoexp_gen}} {
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
+    id 1 \
+    name jet_d_V \
+    type other \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_jet_d_V \
+    op interface \
+    ports { jet_d_V { O 1 vector } jet_d_V_ap_vld { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
     id -1 \
     name ap_ctrl \
     type ap_ctrl \

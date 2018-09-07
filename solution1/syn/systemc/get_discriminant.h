@@ -15,14 +15,15 @@
 namespace ap_rtl {
 
 struct get_discriminant : public sc_module {
-    // Port declarations 7
+    // Port declarations 8
     sc_in< sc_logic > ap_start;
     sc_out< sc_logic > ap_done;
     sc_out< sc_logic > ap_idle;
     sc_out< sc_logic > ap_ready;
     sc_in< sc_lv<5> > jet_tk13DIP_V;
     sc_in< sc_lv<8> > jet_muPt_V;
-    sc_in< sc_lv<4> > jet_d_V;
+    sc_out< sc_lv<1> > jet_d_V;
+    sc_out< sc_logic > jet_d_V_ap_vld;
     // Port declarations for the virtual clock. 
     sc_in_clk ap_virtual_clock;
 
@@ -38,11 +39,15 @@ struct get_discriminant : public sc_module {
     ofstream mHdltvinHandle;
     ofstream mHdltvoutHandle;
     static const sc_logic ap_const_logic_1;
+    static const sc_lv<1> ap_const_lv1_1;
     static const sc_logic ap_const_logic_0;
+    static const bool ap_const_boolean_1;
     // Thread declarations
     void thread_ap_done();
     void thread_ap_idle();
     void thread_ap_ready();
+    void thread_jet_d_V();
+    void thread_jet_d_V_ap_vld();
     void thread_hdltv_gen();
 };
 

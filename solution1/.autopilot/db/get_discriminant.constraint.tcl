@@ -2,8 +2,8 @@ set clock_constraint { \
     name clk \
     module get_discriminant \
     port ap_clk \
-    period 10 \
-    uncertainty 1.25 \
+    period 3.125 \
+    uncertainty 0.390625 \
 }
 
 set all_path {}

@@ -7,21 +7,21 @@
   "GenerateBdFiles": "0",
   "HostMachineBits": "64",
   "Target": {
-    "Family": "aartix7",
-    "Device": "xa7a12t",
-    "Package": "csg325",
-    "Speed": "-1q"
+    "Family": "virtexuplus",
+    "Device": "xcvu9p",
+    "Package": "-flgc2104",
+    "Speed": "-2-i"
   },
   "HlsSolution": {
     
   },
   "ClockInfo": {
     "ClockName": "ap_clk",
-    "ClockPeriod": "10",
+    "ClockPeriod": "3.125",
     "IsCombLogic": "1",
     "II": "x",
     "Latency": "0",
-    "Uncertainty": "1.25"
+    "Uncertainty": "0.390625"
   },
   "Xdc": {
     
@@ -60,11 +60,11 @@
     },
     "jet_d_V": {
       "type": "data",
-      "dir": "in",
-      "width": "4",
+      "dir": "out",
+      "width": "1",
       "ctype": {"DATA": {
           "Type": "integer unsigned",
-          "Width": "4"
+          "Width": "1"
         }}
     },
     "jet_muPt_V": {
@@ -112,8 +112,13 @@
       "width": "8"
     },
     "jet_d_V": {
-      "dir": "in",
-      "width": "4"
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "jet_d_V_ap_vld": {
+      "dir": "out",
+      "width": "1"
     }
   },
   "CPorts": {
@@ -135,9 +140,10 @@
     },
     "jet_d_V": {
       "interfaceRef": "jet_d_V",
-      "dir": "in",
-      "dataWidth": "4",
-      "handshakeRef": "ap_none"
+      "dir": "out",
+      "dataWidth": "1",
+      "handshakeRef": "ap_vld",
+      "firstOutLatency": "0"
     }
   },
   "ModuleInfo": {
@@ -152,15 +158,16 @@
           "PipelineType": "none"
         },
         "Timing": {
-          "Target": "10.00",
-          "Uncertainty": "1.25",
+          "Target": "3.12",
+          "Uncertainty": "0.39",
           "Estimate": "0.000"
         },
         "Area": {
           "BRAM_18K": "0",
           "DSP48E": "0",
           "FF": "0",
-          "LUT": "0"
+          "LUT": "0",
+          "URAM": "0"
         }
       }}
   },
@@ -171,7 +178,7 @@
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2018-09-06 15:37:56 EDT",
+    "Time": "2018-09-06 17:19:47 EDT",
     "ToolName": "vivado_hls",
     "ToolVersion": "2018.2"
   }

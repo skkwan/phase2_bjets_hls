@@ -28829,26 +28829,23 @@ inline bool operator!=(const ap_int<_AP_W> &__x, const complex<ap_int<_AP_W> > &
 # 5 "phase2_bjets_hls/discr_array_exercise.hpp" 2
 
 
-
-
-
-
-
 typedef struct
 {
   ap_uint<5> tk13DIP;
   ap_uint<8> muPt;
-  ap_uint<4> d;
+  ap_uint<1> d;
 } jet_t;
 
-void get_discriminant(jet_t jet);
+void get_discriminant(jet_t &jet);
 # 2 "phase2_bjets_hls/discr_array_exercise.cc" 2
 
-void get_discriminant(jet_t jet){
+void get_discriminant(jet_t &jet){
 
- ap_uint<4> dArray[31][255] = {1};
+ ap_uint<1> dArray[32][256] = {1};
 
 
 _ssdm_SpecArrayPartition( dArray, 0, "COMPLETE", 0, "");
  jet.d = dArray[jet.tk13DIP][jet.muPt];
+
+
 }

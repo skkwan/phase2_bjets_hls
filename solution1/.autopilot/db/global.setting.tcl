@@ -1,6 +1,6 @@
 
 set TopModule "get_discriminant"
-set ClockPeriod "10.000000"
+set ClockPeriod "3.125000"
 set ClockList {}
 set multiClockList {}
 set PortClockMap {}
@@ -40,7 +40,7 @@ set ExportMCPathFlag "0"
 set SCTraceFileName "mytrace"
 set SCTraceFileFormat "vcd"
 set SCTraceOption "all"
-set TargetInfo "xa7a12t:csg325:-1q"
+set TargetInfo "xcvu9p:-flgc2104:-2-i"
 set SourceFiles {sc {} c ../discr_array_exercise.cc}
 set SourceFlags {sc {} c {{}}}
 set DirectiveFile {/home/skwan/vivado/phase2_bjets_hls/solution1/solution1.directive}
@@ -52,7 +52,7 @@ set TBTops {bc "" c "" sc "" cas "" vhdl "" verilog ""}
 set TBInstNames {bc "" c "" sc "" cas "" vhdl "" verilog ""}
 set XDCFiles {}
 set ExtraGlobalOptions {"area_timing" 1 "clock_gate" 1 "impl_flow" map "power_gate" 0}
-set PlatformFiles {{DefaultPlatform {xilinx/aartix7/aartix7 xilinx/aartix7/aartix7_fpv6}}}
+set PlatformFiles {{DefaultPlatform {xilinx/virtexuplus/virtexuplus xilinx/virtexuplus/virtexuplus_fpv7}}}
 set DefaultPlatform "DefaultPlatform"
 set TBTVFileNotFound ""
 set AppFile "../vivado_hls.app"

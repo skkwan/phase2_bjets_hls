@@ -3,13 +3,13 @@
 ================================================================
 == Vivado HLS Report for 'get_discriminant'
 ================================================================
-* Date:           Thu Sep  6 15:37:55 2018
+* Date:           Thu Sep  6 17:19:47 2018
 
 * Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
 * Project:        phase2_bjets_hls
 * Solution:       solution1
-* Product family: aartix7
-* Target device:  xa7a12tcsg325-1q
+* Product family: virtexuplus
+* Target device:  xcvu9p-flgc2104-2-i
 
 
 ================================================================
@@ -20,7 +20,7 @@
     +--------+-------+----------+------------+
     |  Clock | Target| Estimated| Uncertainty|
     +--------+-------+----------+------------+
-    |ap_clk  |  10.00|     0.000|        1.25|
+    |ap_clk  |   3.12|     0.000|        0.39|
     +--------+-------+----------+------------+
 
 + Latency (clock cycles): 
@@ -45,23 +45,23 @@
 == Utilization Estimates
 ================================================================
 * Summary: 
-+-----------------+---------+-------+-------+------+
-|       Name      | BRAM_18K| DSP48E|   FF  |  LUT |
-+-----------------+---------+-------+-------+------+
-|DSP              |        -|      -|      -|     -|
-|Expression       |        -|      -|      -|     -|
-|FIFO             |        -|      -|      -|     -|
-|Instance         |        -|      -|      -|     -|
-|Memory           |        -|      -|      -|     -|
-|Multiplexer      |        -|      -|      -|     -|
-|Register         |        -|      -|      -|     -|
-+-----------------+---------+-------+-------+------+
-|Total            |        0|      0|      0|     0|
-+-----------------+---------+-------+-------+------+
-|Available        |       40|     40|  16000|  8000|
-+-----------------+---------+-------+-------+------+
-|Utilization (%)  |        0|      0|      0|     0|
-+-----------------+---------+-------+-------+------+
++-----------------+---------+-------+---------+---------+-----+
+|       Name      | BRAM_18K| DSP48E|    FF   |   LUT   | URAM|
++-----------------+---------+-------+---------+---------+-----+
+|DSP              |        -|      -|        -|        -|    -|
+|Expression       |        -|      -|        -|        -|    -|
+|FIFO             |        -|      -|        -|        -|    -|
+|Instance         |        -|      -|        -|        -|    -|
+|Memory           |        -|      -|        -|        -|    -|
+|Multiplexer      |        -|      -|        -|        -|    -|
+|Register         |        -|      -|        -|        -|    -|
++-----------------+---------+-------+---------+---------+-----+
+|Total            |        0|      0|        0|        0|    0|
++-----------------+---------+-------+---------+---------+-----+
+|Available        |     4320|   6840|  2364480|  1182240|  960|
++-----------------+---------+-------+---------+---------+-----+
+|Utilization (%)  |        0|      0|        0|        0|    0|
++-----------------+---------+-------+---------+---------+-----+
 
 + Detail: 
     * Instance: 
@@ -91,15 +91,16 @@
 == Interface
 ================================================================
 * Summary: 
-+---------------+-----+-----+------------+------------------+--------------+
-|   RTL Ports   | Dir | Bits|  Protocol  |   Source Object  |    C Type    |
-+---------------+-----+-----+------------+------------------+--------------+
-|ap_start       |  in |    1| ap_ctrl_hs | get_discriminant | return value |
-|ap_done        | out |    1| ap_ctrl_hs | get_discriminant | return value |
-|ap_idle        | out |    1| ap_ctrl_hs | get_discriminant | return value |
-|ap_ready       | out |    1| ap_ctrl_hs | get_discriminant | return value |
-|jet_tk13DIP_V  |  in |    5|   ap_none  |   jet_tk13DIP_V  |    scalar    |
-|jet_muPt_V     |  in |    8|   ap_none  |    jet_muPt_V    |    scalar    |
-|jet_d_V        |  in |    4|   ap_none  |      jet_d_V     |    scalar    |
-+---------------+-----+-----+------------+------------------+--------------+
++----------------+-----+-----+------------+------------------+--------------+
+|    RTL Ports   | Dir | Bits|  Protocol  |   Source Object  |    C Type    |
++----------------+-----+-----+------------+------------------+--------------+
+|ap_start        |  in |    1| ap_ctrl_hs | get_discriminant | return value |
+|ap_done         | out |    1| ap_ctrl_hs | get_discriminant | return value |
+|ap_idle         | out |    1| ap_ctrl_hs | get_discriminant | return value |
+|ap_ready        | out |    1| ap_ctrl_hs | get_discriminant | return value |
+|jet_tk13DIP_V   |  in |    5|   ap_none  |   jet_tk13DIP_V  |    pointer   |
+|jet_muPt_V      |  in |    8|   ap_none  |    jet_muPt_V    |    pointer   |
+|jet_d_V         | out |    1|   ap_vld   |      jet_d_V     |    pointer   |
+|jet_d_V_ap_vld  | out |    1|   ap_vld   |      jet_d_V     |    pointer   |
++----------------+-----+-----+------------+------------------+--------------+
 
